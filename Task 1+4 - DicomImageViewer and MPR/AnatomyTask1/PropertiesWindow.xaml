@@ -1,0 +1,45 @@
+﻿<Window x:Class="AnatomyTask1.PropertiesWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AnatomyTask1"
+        mc:Ignorable="d"
+        Title="PropertiesWindow" Height="450" Width="800">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Categorized Dicom Items">
+                <StackPanel Name="categorizationPanel">
+                    
+                </StackPanel>
+            </TabItem>
+            <TabItem Header="All Dicom Items">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="auto"></RowDefinition>
+                        <RowDefinition Height="*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBox MinHeight="40px" Name="txtSearch" KeyDown="txtSearch_KeyDown"></TextBox>
+                    <DataGrid x:Name="DicomDataGrid" 
+          AutoGenerateColumns="False" 
+          IsReadOnly="False" 
+          CanUserResizeColumns="True" 
+          Margin="10"
+          CellEditEnding="DicomDataGrid_CellEditEnding"
+                              Grid.Row="1">
+                        <DataGrid.Columns>
+                            <DataGridTextColumn Header="Tag ID" Binding="{Binding TagID}" IsReadOnly="True" Width="150" />
+                            <DataGridTextColumn Header="VR" Binding="{Binding VR}" IsReadOnly="True" Width="50" />
+                            <DataGridTextColumn Header="Tag Name" Binding="{Binding TagName}" IsReadOnly="True" Width="200" />
+                            <DataGridTextColumn Header="Value" Binding="{Binding Value}" Width="*" />
+                        </DataGrid.Columns>
+                    </DataGrid>
+                </Grid>
+
+            </TabItem>
+            <TabItem Header="Anonymize Data">
+                <Button x:Name="btnAnonymize" Click="btnAnonymize_Click">Anonymize Data</Button>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>

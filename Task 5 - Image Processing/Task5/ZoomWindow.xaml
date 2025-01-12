@@ -1,0 +1,34 @@
+﻿<Window x:Class="Task5.ZoomWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task5"
+        mc:Ignorable="d"
+        Title="ZoomWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="8*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Column="0">
+            <Button Name="btnZoomLinearInterpolation" Click="btnZoomLinearInterpolation_Click"
+                         Margin="2, 10">Linear Zoom</Button>
+            <Button Name="btnZoomBilinearInterpolation" Click="btnZoomBilinearInterpolation_Click"
+                         Margin="2, 10">Bilinear Zoom</Button>
+            <Button Name="btnZoomNearstNeighnourInterpolation" Click="btnZoomNearstNeighnourInterpolation_Click"
+                         Margin="2, 10">Nearest Neighbour Zoom</Button>
+            <Button Name="btnZoomCubicInterpolation" Click="btnZoomCubicInterpolation_Click"
+                         Margin="2, 10">Cubic Zoom</Button>
+        </StackPanel>
+        <ScrollViewer x:Name="ImageScrollViewer" 
+              HorizontalScrollBarVisibility="Auto" 
+              VerticalScrollBarVisibility="Auto" 
+                      Grid.Column="1">
+            <Image x:Name="MainImage" 
+           RenderOptions.BitmapScalingMode="HighQuality"
+           MouseWheel="MainImage_MouseWheel"
+           Stretch="None"/>
+        </ScrollViewer>
+    </Grid>
+</Window>

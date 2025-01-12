@@ -1,0 +1,197 @@
+﻿<Window x:Class="Task5.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Task5"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1100">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"></RowDefinition>
+            <RowDefinition Height="*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Row="0" Grid.Column="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <TextBlock>Input Image:</TextBlock>
+                <Button Name="btnChooseImage"
+                        Margin="10, 0, 0, 0" Click="btnChooseImage_Click">Choose Image</Button>
+            </StackPanel>
+
+            <Image Grid.Row="1" Name="imgInput" MouseLeftButtonDown="imgInput_MouseDown"
+                   MouseRightButtonDown="imgInput_MouseRightButtonDown"></Image>
+            <Canvas Grid.Row="1" x:Name="imgInputOverlayCanvas" Panel.ZIndex="1"/>
+        </Grid>
+        <ScrollViewer Grid.Row="1" Grid.Column="0">
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                    <RowDefinition Height="auto"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                    <ColumnDefinition Width="auto"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <TextBlock Grid.Row="0" Grid.Column="0"
+                           Margin="2, 10">
+                    Apply modification to: 
+                </TextBlock>
+                <ComboBox Name="cmbImageInputPort" Grid.Row="0" Grid.Column="1"
+                          Margin="2, 10" SelectionChanged="cmbImageInputPort_SelectionChanged">
+                    <ComboBoxItem>Input Port</ComboBoxItem>
+                    <ComboBoxItem>Output Port 1</ComboBoxItem>
+                    <ComboBoxItem>Output Port 2</ComboBoxItem>
+                </ComboBox>
+
+                <TextBlock Grid.Row="1" Grid.Column="0"
+                           Margin="2, 10">
+                    Display output in:
+                </TextBlock>
+                <ComboBox Name="cmbImageOutputPort" Grid.Row="1" Grid.Column="1"
+                          Margin="2, 10" SelectionChanged="cmbImageOutputPort_SelectionChanged">
+                    <ComboBoxItem>Input Port</ComboBoxItem>
+                    <ComboBoxItem>Output Port 1</ComboBoxItem>
+                    <ComboBoxItem>Output Port 2</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Grid.Row="2"
+                           Margin="2, 10">ROI Size:</TextBlock>
+                <ComboBox Name="cmbROISize" Grid.Row="2" Grid.Column="1" SelectionChanged="cmbROISize_SelectionChanged"
+                          Margin="2, 10">
+                    <ComboBoxItem IsSelected="True">16x16</ComboBoxItem>
+                    <ComboBoxItem>32x32</ComboBoxItem>
+                    <ComboBoxItem>64x64</ComboBoxItem>
+                    <ComboBoxItem>128x128</ComboBoxItem>
+                    <ComboBoxItem>256x256</ComboBoxItem>
+                </ComboBox>
+                <TextBlock Grid.Row="3"
+                           Margin="2, 10">SNR:</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="3">
+                    <Button Name="btnSelectROISNR" Click="btnSelectROISNR_Click"
+                         Margin="2, 10">Select ROI</Button>
+                    <Button Name="btnSelectNoiseSNR" Click="btnSelectNoiseSNR_Click"
+                         Margin="2, 10">Select Noise</Button>
+                    <Button Name="btnCalculateSNR" Click="btnCalculateSNR_Click"
+                         Margin="2, 10">Calculate SNR</Button>
+                    <Button Name="btnClearROIs" Click="btnClearROIs_Click"
+                         Margin="2, 10">Clear All ROIs</Button>
+                </StackPanel>
+
+                <TextBlock Grid.Row="4"
+                           Margin="2, 10">CNR:</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="4">
+                    <Button Name="btnSelectROI1CNR" Click="btnSelectROI1CNR_Click"
+                         Margin="2, 10">Select ROI 1</Button>
+                    <Button Name="btnSelectROI2CNR" Click="btnSelectROI2CNR_Click"
+                         Margin="2, 10">Select ROI 2</Button>
+                    <Button Name="btnSelectNoiseCNR" Click="btnSelectNoiseCNR_Click"
+                         Margin="2, 10">Select Noise</Button>
+                    <Button Name="btnCalculateCNR" Click="btnCalculateCNR_Click"
+                         Margin="2, 10">Calculate CNR</Button>
+                </StackPanel>
+                <TextBlock Grid.Row="5"
+                           Margin="2, 10">Noising:</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="5">
+                    <Button Name="btnApplyGaussianNoise" Click="btnApplyGaussianNoise_Click"
+                         Margin="2, 10">Apply Gaussian Noise</Button>
+                    <Button Name="btnApplySaltPepperNoise" Click="btnApplySaltPepperNoise_Click"
+                         Margin="2, 10">Apply Salt Pepper Noise</Button>
+                    <Button Name="btnApplyPoissonNoise" Click="btnApplyPoissonNoise_Click"
+                         Margin="2, 10">Apply Poisson Noise</Button>
+                </StackPanel>
+                <TextBlock Grid.Row="6"
+           Margin="2, 10">Noising Degree:</TextBlock>
+                <Slider Grid.Row="6" Grid.Column="1"  Margin="2, 10"
+                        Name="sliderNoiseDegree"
+                        Minimum="0" Maximum="1000"
+                        ValueChanged="sliderNoiseDegree_ValueChanged"></Slider>
+                <TextBlock Grid.Row="7"
+                           Margin="2, 10">Denoising:</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="7">
+                    <Button Name="btnApplyMeanDenoising" Click="btnApplyMeanDenoising_Click"
+                         Margin="2, 10">Apply Mean Denoising</Button>
+                    <Button Name="btnApplyWeightedMedianDenoising" Click="btnApplyWeightedMedianDenoising_Click"
+                         Margin="2, 10">Apply Weighted Median Denoise</Button>
+                    <Button Name="btnApplyWeinerDenoising" Click="btnApplySpatialFrequencyDomainDenoising_Click"
+                         Margin="2, 10">Apply Weiner Denoising</Button>
+                </StackPanel>
+
+                <TextBlock Grid.Row="8"
+                           Margin="2, 10">Filters:</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="8">
+                    <Button Name="btnApplyLowPassFilter" Click="btnApplyLowPassFilter_Click"
+                         Margin="2, 10">Apply Low Pass Filter</Button>
+                    <Button Name="btnApplyHighPassFilter" Click="btnApplyHighPassFilter_Click"
+                         Margin="2, 10">Apply High Pass Filter</Button>
+                </StackPanel>
+                <TextBlock Grid.Row="9"
+           Margin="2, 10">Brightness:</TextBlock>
+                <Slider Grid.Row="9" Grid.Column="1"  Margin="2, 10"
+                        Name="sliderBrightness"
+                        Minimum="-10" Maximum="10" Value="0"
+                        ValueChanged="sliderBrightness_ValueChanged"></Slider>
+                <TextBlock Grid.Row="10"
+           Margin="2, 10">Contrast:</TextBlock>
+                <Slider Grid.Row="10" Grid.Column="1"  Margin="2, 10"
+                        Name="sliderContrast"
+                        Minimum="-10" Maximum="10" Value="1"
+                        ValueChanged="sliderContrast_ValueChanged"></Slider>
+                <TextBlock Grid.Row="11"
+                           Margin="2, 10">Filters:</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="11">
+                    <Button Name="btnApplyHistogramEqualization" Click="btnApplyHistogramEqualization_Click"
+                         Margin="2, 10">Apply Histogram Equalization</Button>
+                    <Button Name="btnApplyCLACHE" Click="btnApplyCLACHE_Click"
+                         Margin="2, 10">Apply CLACHE</Button>
+                    <Button Name="btnApplyGammaCorrection" Click="btnApplyGammaCorrection_Click"
+                         Margin="2, 10">Apply Gamma Correction</Button>
+                </StackPanel>
+
+                <TextBlock Grid.Row="12"
+                           Margin="2, 10">Zoom:</TextBlock>
+                <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="12">
+                    <Button Name="btnOpenZoomWindow" Click="btnOpenZoomWindow_Click"
+                         Margin="2, 10">Open zoom window on selected viewport</Button>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
+        <Grid Grid.Row="0" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock>Output Port 1:</TextBlock>
+            <Image Grid.Row="1" Name="imgOutput1" MouseLeftButtonDown="imgOutput1_MouseDown"
+                   MouseRightButtonDown="imgOutput1_MouseRightButtonDown"></Image>
+            <Canvas Grid.Row="1" x:Name="imgOutput1OverlayCanvas" Panel.ZIndex="1"/>
+        </Grid>
+        <Grid Grid.Row="1" Grid.Column="1">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="auto"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+            <TextBlock>Output Port 2:</TextBlock>
+            <Image Grid.Row="1" Name="imgOutput2" MouseLeftButtonDown="imgOutput2_MouseDown"
+                   MouseRightButtonDown="imgOutput2_MouseRightButtonDown"></Image>
+            <Canvas Grid.Row="1" x:Name="imgOutput2OverlayCanvas" Panel.ZIndex="1"/>
+        </Grid>
+    </Grid>
+</Window>

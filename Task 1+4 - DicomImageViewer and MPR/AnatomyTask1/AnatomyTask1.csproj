@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="fo-dicom" Version="5.1.5" />
+    <PackageReference Include="fo-dicom.Codecs" Version="5.15.4" />
+    <PackageReference Include="fo-dicom.Imaging.Desktop" Version="5.1.5" />
+    <PackageReference Include="Kitware.mummy.Runtime" Version="1.2.0" />
+    <PackageReference Include="Kitware.VTK" Version="9.4.2024.1104" />
+    <PackageReference Include="Kitware.WPFControls" Version="9.4.2024.1104" />
+  </ItemGroup>
+</Project>
