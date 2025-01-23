@@ -49,6 +49,9 @@ This project combines two tasks related to AI on images:
 - *Matplotlib/Seaborn*: For visualization of results.
 
 ---
-
+## Video Demonstration
+- A video demonstration for the Medical Image Classifier can be found here: https://drive.google.com/file/d/1P_fUhfbUgMpm8Tc8gsVkwx7TzNi7pWtS/view?usp=drive_link
+- A video demonstration for the Football Games Analyzer can be found here: https://drive.google.com/file/d/1hx_tlL_X8C_PTwmdzM0QiMXQwRHiwnkb/view?usp=drive_link  
+---
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
