@@ -59,6 +59,8 @@
 - **OpenCVSharp**: For image processing and visualization.
 - **WPF**: The GUI Framework
 ---
-
+## Video Demonstration
+- A video demonstration for the Image Processing Program can be found here: https://drive.google.com/file/d/1JrTRg0AQ-_sz5VoVTDFjXmB4-OO2Ro5f/view?usp=drive_link
+---
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
