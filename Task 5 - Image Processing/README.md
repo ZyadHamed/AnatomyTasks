@@ -1,4 +1,6 @@
-![Zoom](https://github.com/user-attachments/assets/7804b668-3931-477e-b37b-3876c8c320b6)This project is an advanced image viewer that allows users to open and view 2D images, apply various image processing techniques, and visualize the results in multiple viewports. The application supports a wide range of functionalities, including resolution adjustments, noise addition and removal, filtering, contrast enhancement, and more.
+
+### Image Processing 
+This project is an advanced image viewer that allows users to open and view 2D images, apply various image processing techniques, and visualize the results in multiple viewports. The application supports a wide range of functionalities, including resolution adjustments, noise addition and removal, filtering, contrast enhancement, and more.
 
 ---
 
