@@ -63,6 +63,8 @@ This modification allows fine control over attenuation, facilitating precise ima
 - **Affordability**: The absence of expensive components reduces operational costs.
 - **Accessibility**: The simpler design makes this technology scalable and deployable in diverse medical settings.
 
+##Video Demonstration
+A demonstration of the project can be found on the following linl: https://drive.google.com/file/d/1XivM6WzkDDVcKvnXnKvP0BsycF_Ax1Im/view?usp=drive_link
 ## References
 1. V. De, *Light scattering by small particles*, New York: Dover Publications, 2009.
 2. C. Mi et al., "Bone disease imaging through the near-infrared-II window," *Nature Communications*, vol. 14, no. 1, p. 6287, Oct. 2023. [DOI: 10.1038/s41467-023-42001-2](https://doi.org/10.1038/s41467-023-42001-2)
