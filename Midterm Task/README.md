@@ -29,7 +29,9 @@ This modification allows fine control over attenuation, facilitating precise ima
 1. **Device Setup**:
    - The system comprises a bed with light detectors and an emitter containing NIR light sources.
    - The patient lies on the bed while the emitter rotates and adjusts its distance to collect attenuation data.
+   ![Device](https://github.com/user-attachments/assets/aabdff33-8d16-4002-bcea-5a7553b47a2b)
 
+   
 2. **Data Collection**:
    - Multiple beams are emitted through the target tissue slice.
    - The light’s intensity is measured after attenuation through various tissues.
