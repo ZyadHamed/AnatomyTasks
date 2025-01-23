@@ -58,6 +58,10 @@ This project is a 3D puzzle game focused on the **Skeletal Arm**. The game allow
 - **Blender**: For creating and editing the 3D model of the skeletal arm.
 - **C#**: For scripting game mechanics in Unity.
 
+## Gameplay Footage
+- A gameplay footage for the game can be found here: https://drive.google.com/file/d/1ua1JWEocK4g93vFpnmSN_uGyLU_5etlZ/view?usp=drive_link
+
+---
 ## License
 This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
 
